@@ -8,20 +8,45 @@ namespace quess_game
         {
             Random random = new Random();
             int nahodnecislo;
+            bool neuhodl = true;
+            int hadanecislo;
+            nahodnecislo = random.Next(1, 100);
 
-            nahodnecislo = random.Next (1, 100);
-            Console.WriteLine(nahodnecislo);
-            
+
 
             Console.WriteLine("Hádací hra");
             Console.WriteLine("----------------------");
             Console.WriteLine("Myslím si číslo od 1 do 100");
 
-            Console.ReadLine();
-            
-            
 
-            
+
+            while (neuhodl)
+            {
+                Console.WriteLine("tipni hodnotu:");
+                hadanecislo = int.Parse(Console.ReadLine());
+                if (hadanecislo > nahodnecislo) 
+                {
+                    Console.WriteLine("to je moc");
+                } 
+                else if (hadanecislo < nahodnecislo) 
+                {
+                    Console.WriteLine("to je málo");
+                }
+                else 
+                {
+                    Console.WriteLine("Výborně, uhádnul jsi");
+                    neuhodl = false;
+                }
+                
+            }
+
+            Console.ReadLine();
+
+
+
+
+
+
         }
     }
 }
